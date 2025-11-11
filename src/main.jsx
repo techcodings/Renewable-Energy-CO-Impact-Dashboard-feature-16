@@ -56,8 +56,16 @@ const App=()=>{
   }
 
   return (
-    <div className="wrap">
-      {/* header */}
+    <div className="wrap fade-in">
+
+      {/* ✅ Back to Home */}
+      <div className="btn-back-container">
+        <a href="https://energy-verse-portal.netlify.app/?feature=11" className="btn-back-scroll">
+          ← Back to Home
+        </a>
+      </div>
+
+      {/* Header */}
       <div className="title">
         <div>
           <h1>CO₂ Impact — Dashboard</h1>
@@ -89,13 +97,12 @@ const App=()=>{
         <KPI label="Inputs Editable" value="Yes" hint="Modify inputs below"/>
       </div>
 
-      {/* layout */}
+      {/* Layout */}
       <div className="grid" style={{marginTop:16}}>
-        {/* left column */}
+        {/* Left column */}
         <div className="leftcol">
           <div className="card">
             <h3>Regions</h3>
-
             <div className="scroll-area">
               {regions.map((r,i)=>(
                 <div key={i} className="region-box">
@@ -146,17 +153,14 @@ const App=()=>{
 
           <div className="card">
             <h3>Policy Path Params</h3>
-
             <div className="form-row">
               <div className="label">Start Year</div>
               <input type="number" value={startYear} onChange={e=>setStartYear(e.target.value)}/>
             </div>
-
             <div className="form-row">
               <div className="label">Target Year</div>
               <input type="number" value={targetYear} onChange={e=>setTargetYear(e.target.value)}/>
             </div>
-
             <div className="form-row">
               <div className="label">Target Share %</div>
               <input type="number" value={targetShare} onChange={e=>setTargetShare(e.target.value)}/>
@@ -164,7 +168,7 @@ const App=()=>{
           </div>
         </div>
 
-        {/* right column */}
+        {/* Right column */}
         <div className="rightcol">
           <div className="card col-span-12">
             <h3>Emissions by Region</h3>
